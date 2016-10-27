@@ -15,6 +15,10 @@
 		A0A2C25B1DC0A3090015BC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A2C2591DC0A3090015BC33 /* LaunchScreen.storyboard */; };
 		A0A2C2661DC0A3090015BC33 /* OptimizeGradientPolylineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C2651DC0A3090015BC33 /* OptimizeGradientPolylineTests.m */; };
 		A0A2C2711DC0A3090015BC33 /* OptimizeGradientPolylineUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C2701DC0A3090015BC33 /* OptimizeGradientPolylineUITests.m */; };
+		A0A2C2801DC0A3700015BC33 /* WWGpsPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C27F1DC0A3700015BC33 /* WWGpsPoint.m */; };
+		A0A2C2831DC0A3F20015BC33 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A2C2821DC0A3F20015BC33 /* MapKit.framework */; };
+		A0A2C2881DC0CFD00015BC33 /* XGChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C2851DC0CFD00015BC33 /* XGChartConfiguration.m */; };
+		A0A2C2891DC0CFD00015BC33 /* XGChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C2871DC0CFD00015BC33 /* XGChart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 		A0A2C26C1DC0A3090015BC33 /* OptimizeGradientPolylineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OptimizeGradientPolylineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A2C2701DC0A3090015BC33 /* OptimizeGradientPolylineUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptimizeGradientPolylineUITests.m; sourceTree = "<group>"; };
 		A0A2C2721DC0A3090015BC33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0A2C27E1DC0A3700015BC33 /* WWGpsPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWGpsPoint.h; sourceTree = "<group>"; };
+		A0A2C27F1DC0A3700015BC33 /* WWGpsPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWGpsPoint.m; sourceTree = "<group>"; };
+		A0A2C2821DC0A3F20015BC33 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A0A2C2841DC0CFD00015BC33 /* XGChartConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGChartConfiguration.h; sourceTree = "<group>"; };
+		A0A2C2851DC0CFD00015BC33 /* XGChartConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGChartConfiguration.m; sourceTree = "<group>"; };
+		A0A2C2861DC0CFD00015BC33 /* XGChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGChart.h; sourceTree = "<group>"; };
+		A0A2C2871DC0CFD00015BC33 /* XGChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGChart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A2C2831DC0A3F20015BC33 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +97,7 @@
 				A0A2C2641DC0A3090015BC33 /* OptimizeGradientPolylineTests */,
 				A0A2C26F1DC0A3090015BC33 /* OptimizeGradientPolylineUITests */,
 				A0A2C2491DC0A3090015BC33 /* Products */,
+				A0A2C2811DC0A3F20015BC33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +118,12 @@
 				A0A2C24F1DC0A3090015BC33 /* AppDelegate.m */,
 				A0A2C2511DC0A3090015BC33 /* ViewController.h */,
 				A0A2C2521DC0A3090015BC33 /* ViewController.m */,
+				A0A2C27E1DC0A3700015BC33 /* WWGpsPoint.h */,
+				A0A2C27F1DC0A3700015BC33 /* WWGpsPoint.m */,
+				A0A2C2841DC0CFD00015BC33 /* XGChartConfiguration.h */,
+				A0A2C2851DC0CFD00015BC33 /* XGChartConfiguration.m */,
+				A0A2C2861DC0CFD00015BC33 /* XGChart.h */,
+				A0A2C2871DC0CFD00015BC33 /* XGChart.m */,
 				A0A2C2541DC0A3090015BC33 /* Main.storyboard */,
 				A0A2C2571DC0A3090015BC33 /* Assets.xcassets */,
 				A0A2C2591DC0A3090015BC33 /* LaunchScreen.storyboard */,
@@ -138,6 +157,14 @@
 				A0A2C2721DC0A3090015BC33 /* Info.plist */,
 			);
 			path = OptimizeGradientPolylineUITests;
+			sourceTree = "<group>";
+		};
+		A0A2C2811DC0A3F20015BC33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0A2C2821DC0A3F20015BC33 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +234,13 @@
 				TargetAttributes = {
 					A0A2C2471DC0A3090015BC33 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = P7D2R2T64D;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					A0A2C2601DC0A3090015BC33 = {
 						CreatedOnToolsVersion = 8.0;
@@ -273,7 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A2C2881DC0CFD00015BC33 /* XGChartConfiguration.m in Sources */,
+				A0A2C2891DC0CFD00015BC33 /* XGChart.m in Sources */,
 				A0A2C2531DC0A3090015BC33 /* ViewController.m in Sources */,
+				A0A2C2801DC0A3700015BC33 /* WWGpsPoint.m in Sources */,
 				A0A2C2501DC0A3090015BC33 /* AppDelegate.m in Sources */,
 				A0A2C24D1DC0A3090015BC33 /* main.m in Sources */,
 			);
@@ -422,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P7D2R2T64D;
 				INFOPLIST_FILE = OptimizeGradientPolyline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobvoi.OptimizeGradientPolyline;
@@ -433,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P7D2R2T64D;
 				INFOPLIST_FILE = OptimizeGradientPolyline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobvoi.OptimizeGradientPolyline;
@@ -505,6 +543,7 @@
 				A0A2C2771DC0A3090015BC33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0A2C2781DC0A3090015BC33 /* Build configuration list for PBXNativeTarget "OptimizeGradientPolylineTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +552,7 @@
 				A0A2C27A1DC0A3090015BC33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0A2C27B1DC0A3090015BC33 /* Build configuration list for PBXNativeTarget "OptimizeGradientPolylineUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +561,7 @@
 				A0A2C27D1DC0A3090015BC33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
