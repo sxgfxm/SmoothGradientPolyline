@@ -55,6 +55,7 @@
   //  max range
   self.maxSpeed = 10.0;
   self.maxHue = 0.3;
+  //  模拟运动过程中GPS信息及对应的速度值
   //  points
   self.points = [[NSMutableArray alloc] init];
   CGFloat delta = 0.00001;
@@ -88,6 +89,7 @@
     point.location = coord;
     [self.points addObject:point];
   }
+  //  使用滑动窗口平滑和低通滤波处理速度数据
   //  points2
   self.points2 = [self filteredPoints2WithPoints:self.points unitWidth:5];
   //  points3
@@ -345,7 +347,7 @@ filteredPoints2WithPoints:(NSMutableArray<WWGpsPoint *> *)points
                          points:(NSMutableArray<WWGpsPoint *> *)points {
   UIView *gradientView = [[UIView alloc] initWithFrame:mapView.frame];
   NSMutableArray *arr = [[NSMutableArray alloc] init];
-  //  坐标转换
+  //  通过MKMapView转换坐标至对应大小的UIView
   for (WWGpsPoint *point in points) {
     [arr addObject:[NSValue
                        valueWithCGPoint:[mapView
@@ -359,15 +361,15 @@ filteredPoints2WithPoints:(NSMutableArray<WWGpsPoint *> *)points
   for (int i = 1; i < arr.count; i++) {
     CGPoint lastPoint = [arr[i - 1] CGPointValue];
     CGPoint newPoint = [arr[i] CGPointValue];
-    //  gradient
+    //  gradientLayer
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = gradientView.bounds;
     CGFloat hue = points[i].speed / self.maxSpeed * self.maxHue;
     UIColor *newColor =
         [UIColor colorWithHue:hue saturation:1 brightness:1 alpha:1];
-    gradientLayer.locations = @[ @(0.2), @(0.8) ];
     gradientLayer.colors =
         @[ (__bridge id)(lastColor.CGColor), (__bridge id)(newColor.CGColor) ];
+    gradientLayer.locations = @[ @(0.2), @(0.8) ];
     gradientLayer.startPoint =
         CGPointMake(lastPoint.x / gradientView.frame.size.width,
                     lastPoint.y / gradientView.frame.size.height);
@@ -375,18 +377,18 @@ filteredPoints2WithPoints:(NSMutableArray<WWGpsPoint *> *)points
         CGPointMake(newPoint.x / gradientView.frame.size.width,
                     newPoint.y / gradientView.frame.size.height);
     [gradientView.layer addSublayer:gradientLayer];
-    //  mask
-    CAShapeLayer *layer = [CAShapeLayer layer];
-    layer.frame = gradientView.bounds;
+    //  shapeLayer
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.frame = gradientView.bounds;
     [path moveToPoint:lastPoint];
     [path addLineToPoint:newPoint];
-    layer.path = path.CGPath;
-    layer.lineWidth = 5;
-    layer.strokeColor = [UIColor whiteColor].CGColor;
-    layer.fillColor = [UIColor clearColor].CGColor;
-    layer.lineCap = kCALineCapRound;
-    layer.lineJoin = kCALineJoinRound;
-    gradientLayer.mask = layer;
+    shapeLayer.path = path.CGPath;
+    shapeLayer.lineWidth = 5;
+    shapeLayer.strokeColor = [UIColor whiteColor].CGColor;
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.lineCap = kCALineCapRound;
+    shapeLayer.lineJoin = kCALineJoinRound;
+    gradientLayer.mask = shapeLayer;
     //  reset
     [path removeAllPoints];
     lastColor = newColor;
